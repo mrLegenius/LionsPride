@@ -200,7 +200,7 @@ ModelImporter:
       takeName: Attack
       internalID: 0
       firstFrame: 0
-      lastFrame: 301
+      lastFrame: 120
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -229,15 +229,15 @@ ModelImporter:
       takeName: Eat
       internalID: 0
       firstFrame: 0
-      lastFrame: 301
+      lastFrame: 200
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -258,7 +258,7 @@ ModelImporter:
       takeName: Howl
       internalID: 0
       firstFrame: 0
-      lastFrame: 301
+      lastFrame: 80
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -316,7 +316,7 @@ ModelImporter:
       takeName: Run
       internalID: 0
       firstFrame: 0
-      lastFrame: 301
+      lastFrame: 16
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -345,7 +345,7 @@ ModelImporter:
       takeName: Walk Fast
       internalID: 0
       firstFrame: 0
-      lastFrame: 301
+      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -374,7 +374,7 @@ ModelImporter:
       takeName: Walk
       internalID: 0
       firstFrame: 0
-      lastFrame: 301
+      lastFrame: 50
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

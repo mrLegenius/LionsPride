@@ -23,6 +23,7 @@ public class Lioness : MonoBehaviour
     
     [Header("Dependencies")]
     [SerializeField] private NavMeshAgent _navMeshAgent;
+    [SerializeField] private LionessAnimator _animator;
     
     private RootBehaviorTreeNode _behaviorTree;
 
@@ -48,6 +49,8 @@ public class Lioness : MonoBehaviour
     {
         if (!_isDrinking)
             ThirstLevel += _thirstGrowthRate;
+        
+        _animator.SetSpeed(_navMeshAgent.velocity.magnitude);
     }
 
     private void OnDestroy()
@@ -63,9 +66,7 @@ public class Lioness : MonoBehaviour
                     new List<BehaviorTreeNode>
                     {
                         new MoveToTargetBehaviorTreeNode(_waterSource, _navMeshAgent),
-                        new WaterDrinkBehaviorTreeNode(() => ThirstLevel <= 0.1f, () => ThirstLevel -= _drinkRate)
-                            .OnEntered(() => _isDrinking = true)
-                            .OnExited(_ => _isDrinking = false),
+                        GetWaterDrinkBehavior(),
                     })
                     .AddCondition(() => ThirstLevel > _thirstThreshold),
                 new SequenceBehaviorTreeNode(
@@ -75,5 +76,18 @@ public class Lioness : MonoBehaviour
                         new WaitBehaviorTreeNode(_restTime),
                     }),
             }));
+
+    private BehaviorTreeNode GetWaterDrinkBehavior() =>
+        new WaterDrinkBehaviorTreeNode(() => ThirstLevel <= 0.1f, () => ThirstLevel -= _drinkRate)
+            .OnEntered(() =>
+            {
+                _isDrinking = true;
+                _animator.SetEatOrDrink(true);
+            })
+            .OnExited(_ =>
+            {
+                _isDrinking = false;
+                _animator.SetEatOrDrink(false);
+            });
 }
 }

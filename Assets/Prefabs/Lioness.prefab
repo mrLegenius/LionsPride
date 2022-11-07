@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1558933191789298560}
   - component: {fileID: 568074058459552754}
+  - component: {fileID: 49532161684737445}
   - component: {fileID: 6822286696942741480}
+  - component: {fileID: 5457676850245309529}
   m_Layer: 0
   m_Name: Lioness
   m_TagString: Untagged
@@ -46,9 +48,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40b0e2ddac124f868047d125b0b2746b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _areaRadius: 1
-  _sleepTime: 5
+  _thirstLevel: 0.3
+  _thirstGrowthRate: 0.01
+  _thirstThreshold: 0.4
+  _drinkRate: 0.01
+  _waterSource: {fileID: 0}
+  _restAreaRadius: 0
+  _restTime: 0
   _navMeshAgent: {fileID: 6822286696942741480}
+  _animator: {fileID: 49532161684737445}
+--- !u!114 &49532161684737445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558933191789298623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ac6aa4bbe7447f46880b64f0bb8a2e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!195 &6822286696942741480
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -71,6 +91,26 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
+--- !u!95 &5457676850245309529
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558933191789298623}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: e663d77665c76dc4e8fb0e980351cc8e, type: 3}
+  m_Controller: {fileID: 9100000, guid: 97da47a37d21afe488419a387f127a3a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1558933191632337756
 PrefabInstance:
   m_ObjectHideFlags: 0
