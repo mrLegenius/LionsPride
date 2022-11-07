@@ -11,7 +11,7 @@ public class WaitBehaviorTreeNode : BehaviorTreeNode
         _secondsToWait = seconds;
     }
     
-    public override async UniTask<bool> Execute(CancellationToken ct)
+    protected override async UniTask<bool> ExecuteOverride(CancellationToken ct)
     {
         await UniTask.Delay((int)(_secondsToWait * 1000), cancellationToken: ct);
         return !ct.IsCancellationRequested;

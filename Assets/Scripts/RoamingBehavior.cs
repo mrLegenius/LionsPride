@@ -17,7 +17,7 @@ public class RoamingBehaviorTreeNode : BehaviorTreeNode
         _navMeshAgent = navMeshAgent;
     }
 
-    public override async UniTask<bool> Execute(CancellationToken ct)
+    protected override async UniTask<bool> ExecuteOverride(CancellationToken ct)
     {
         _navMeshAgent.SetDestination(GetRandomLocation());
         await UniTask.WaitUntil(IsDestinationReached, cancellationToken: ct);

@@ -26,7 +26,7 @@ public class RootBehaviorTreeNode : BehaviorTreeNode
         _cts?.Dispose();
     }
     
-    public override async UniTask<bool> Execute(CancellationToken ct)
+    protected override async UniTask<bool> ExecuteOverride(CancellationToken ct)
     {
         while (true)
         {

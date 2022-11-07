@@ -13,7 +13,7 @@ public class SequenceBehaviorTreeNode : BehaviorTreeNode
         _childNodes = nodes;
     }
     
-    public override async UniTask<bool> Execute(CancellationToken ct)
+    protected override async UniTask<bool> ExecuteOverride(CancellationToken ct)
     {
         foreach (var child in _childNodes)
         {
